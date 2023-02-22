@@ -13,7 +13,7 @@ const Art = function() {
     var folder = section + '/';
 
     imageNames[section].map(function(name, i) {
-      var source = 'http://localhost:4001/public/images/thumbs/' + folder + name + '.jpg';
+      var source = 'https://ryananger.github.io/public/images/thumbs/' + folder + name + '.jpg';
 
       images.push(
         <div key={i} className='imageContainer v'>
@@ -36,7 +36,7 @@ const Art = function() {
       <div className='zoomModal v'>
         <img
           className='zoomImage hidden'
-          src={`http://localhost:4001/public/images/${zoom.section}/${imageNames[zoom.section][zoom.index]}.png`}
+          src={`https://ryananger.github.io/public/images/${zoom.section}/${imageNames[zoom.section][zoom.index]}.png`}
           onClick={()=>{setZoom(null)}}
           onLoad={(e)=>{e.target.className = 'zoomImage visible'}}
           loading='lazy'

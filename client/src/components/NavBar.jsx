@@ -15,7 +15,7 @@ const NavBar = function() {
 
   return (
     <div className='nav v'>
-      <img className='logo hidden' src={'http://localhost:4001/public/rycreates.png'} onLoad={(e)=>{e.target.className = 'logo visible'}}/>
+      <img className='logo hidden' src={'https://ryananger.github.io/public/rycreates.png'} onLoad={(e)=>{e.target.className = 'logo visible'}}/>
       <h2 className={'navButton' + checkView('web')} onClick={()=>{setView('web')}}>web</h2>
       <h2 className={'navButton' + checkView('art')} onClick={()=>{setView('art')}}>art</h2><br/><br/>
       <div style={{textAlign: 'center', width: '200px', fontSize: '1.8vh'}}>

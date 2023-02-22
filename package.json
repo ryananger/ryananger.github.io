@@ -1,11 +1,11 @@
 {
-  "name": "react-template",
+  "name": "ry-creates",
   "version": "0.0.1",
   "description": "",
   "author": "Ry Scott",
   "license": "UNLICENSED",
   "private": true,
-  "homepage": "http://ryananger.github.io/toast",
+  "homepage": "http://ryananger.github.io/",
   "scripts": {
     "deploy": "gh-pages -d client/dist",
     "start": "webpack --mode=development -w",
