@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 import '../styles/art.css';
-import st            from 'ryscott-st';
-import {ax, helpers} from 'util';
+import st from 'ryscott-st';
 
 const Art = function() {
   const [zoom, setZoom] = useState(null);

@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 import '../styles/web.css';
-import st            from 'ryscott-st';
-import {ax, helpers} from 'util';
+import st from 'ryscott-st';
 
 const Web = function() {
   const [project, setProject] = useState('toast');

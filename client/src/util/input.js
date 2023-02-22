@@ -1,6 +1,4 @@
-import st      from 'ryscott-st';
-import ax      from './ax.js';
-import helpers from './helpers.js';
+import st from 'ryscott-st';
 
 var mouse = {
   x: null,
@@ -21,9 +19,6 @@ window.addEventListener('keypress', function(e) {
   if (e.target.type === 'text') {return;}
 
   switch (e.key) {
-    case 'f':
-      helpers.alert('Someone pressed F.');
-      break;
     case 'm':
       console.log(mouse);
       break;

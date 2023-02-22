@@ -1,13 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {FaFacebookSquare as FB,
-        FaInstagram as Insta} from 'react-icons/fa';
-import {AiFillPhone as Phone} from 'react-icons/ai';
 
 import '../styles/style.css';
-import st            from 'ryscott-st';
-import {ax, helpers} from 'util';
+import st from 'ryscott-st';
 
-import Alert from './Alert.jsx';
 import Web from './Web.jsx';
 import Art from './Art.jsx';
 import NavBar from './NavBar.jsx';
@@ -41,7 +36,6 @@ const App = function() {
 
   return (
     <div id='app' className='app h'>
-      <Alert />
       <NavBar />
       <div className='main'>
         {views[view]}
