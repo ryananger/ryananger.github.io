@@ -14,7 +14,7 @@ const NavBar = function() {
   };
 
   return (
-    <div className='nav v'>
+    <div className='nav v' style={{alignItems: 'center'}}>
       <img className='logo hidden' src={'https://ryananger.github.io/public/rycreates.png'} onLoad={(e)=>{e.target.className = 'logo visible'}}/>
       <h2 className={'navButton' + checkView('web')} onClick={()=>{setView('web')}}>web</h2>
       <h2 className={'navButton' + checkView('art')} onClick={()=>{setView('art')}}>art</h2><br/><br/>
@@ -22,7 +22,11 @@ const NavBar = function() {
         Hi, I'm Ry, and I create.
       </div>
       <br/><br/>
-      <ContactButtons />
+      <div className='v'>
+        <ContactButtons />
+        <small style={{marginTop: '1vh'}}>ryan.anger.314@gmail.com</small>
+        <small>734.530.7883</small>
+      </div>
     </div>
   )
 };
