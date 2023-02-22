@@ -110,7 +110,7 @@ h1, h2, h3 {
 
 .notSupported {
   width: 80vw;
-  height: 90vh;
+  height: 80vh;
   font-size: 3vh;
   text-align: center;
   justify-content: space-between;

@@ -29,7 +29,7 @@ const App = function() {
         <div className='notSupported v'>
           <img
             className='logo hidden'
-            src={'http://localhost:4001/public/rycreates.png'}
+            src={'https://ryananger.github.io/public/rycreates.png'}
             onLoad={(e)=>{e.target.className = 'logo visible'}}
           />
           <ContactButtons />
