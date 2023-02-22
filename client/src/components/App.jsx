@@ -7,81 +7,47 @@ import '../styles/style.css';
 import st            from 'ryscott-st';
 import {ax, helpers} from 'util';
 
-import Alert          from './Alert.jsx';
-import Home           from './Home.jsx';
-import Menu           from './Menu.jsx';
-import Gallery        from './Gallery.jsx';
-import NavBar         from './navbar/NavBar.jsx';
-import NavBarPortrait from './navbar/NavBarPortrait.jsx';
-import NavBarPhone    from './navbar/NavBarPhone.jsx';
+import Alert from './Alert.jsx';
+import Web from './Web.jsx';
+import Art from './Art.jsx';
+import NavBar from './NavBar.jsx';
+import ContactButtons from './ContactButtons.jsx';
 
 const mode = window.innerWidth < 540 ? 'phone' : (window.innerWidth > window.innerHeight ? 'landscape' : 'portrait');
-const URL  = 'https://ryananger.github.io/toast';
 
 const App = function() {
-  const [user, setUser] = st.newState('user', useState(null));
-  const [view, setView] = st.newState('view', useState(mode === 'phone' ? 'nav' : 'home'));
-
-  st.URL = URL;
+  const [view, setView] = st.newState('view', useState('web'));
 
   const views = {
-    home:    <Home />,
-    menu:    <Menu />,
-    gallery: <Gallery />
+    web: <Web />,
+    art: <Art />
   };
 
-  var renderImages = function() {
-    const viewImages = {
-      home:  [5, 3, 6],
-      menu:  [2, 4, 7],
-      order: [1, 3, 5],
-      nav:   []
-    };
-
+  if (mode !== 'landscape') {
     return (
-      <div className='mainImages v'>
-        <img className='mainImage img' src={`${URL}/public/food${viewImages[view][0]}.jpg`}/>
-        <img className='mainImage img' src={`${URL}/public/food${viewImages[view][1]}.jpg`}/>
-        <img className='mainImage img' src={`${URL}/public/food${viewImages[view][2]}.jpg`}/>
+      <div id='app' className='app v'>
+        <div className='notSupported v'>
+          <img
+            className='logo hidden'
+            src={'http://localhost:4001/public/rycreates.png'}
+            onLoad={(e)=>{e.target.className = 'logo visible'}}
+          />
+          <ContactButtons />
+          This device is not yet supported. Please view on desktop.
+        </div>
       </div>
     );
-  };
-
-  const modes = {
-    landscape: (
-      <div className='h' style={{height: '100%', width: '100%', maxWidth: '1500px'}}>
-        <NavBar/>
-        <div className='main h'>
-          {views[view]}
-          {view !== 'gallery' && renderImages()}
-        </div>
-      </div>
-    ),
-    portrait: (
-      <div className='v' style={{height: '100%', width: '100%'}}>
-        <NavBarPortrait/>
-        <div className='main portrait v'>
-          {views[view]}
-        </div>
-      </div>
-    ),
-    phone: (
-      <div className='v' style={{height: '100%', width: '100%'}}>
-        <NavBarPhone/>
-        <div className='main phone v'>
-          {views[view]}
-        </div>
-      </div>
-    ),
-  };
+  }
 
   return (
     <div id='app' className='app h'>
       <Alert />
-      <img className='bgImage' src={`${URL}/public/brick.jpg`}/>
-      {modes[mode]}
+      <NavBar />
+      <div className='main'>
+        {views[view]}
+      </div>
     </div>
-  )
+  );
 };
 
 export default App;

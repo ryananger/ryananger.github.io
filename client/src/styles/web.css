@@ -1,0 +1,26 @@
+.webViewer {
+  height: 100%;
+}
+
+.webButtons {
+  width: 100%;
+  border-bottom: 2px solid;
+  margin-bottom: 1vh;
+}
+
+.webView {
+  width: 100%;
+  aspect-ratio: 16/9 auto;
+
+  border: 2px solid;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.jupiterFallsView {
+  height: 80%;
+  aspect-ratio: 9/16 auto;
+
+  border: 2px solid;
+  border-radius: 20px;
+}
