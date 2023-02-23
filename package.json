@@ -8,7 +8,7 @@
   "homepage": "http://ryananger.github.io/",
   "scripts": {
     "deploy": "gh-pages -d client/dist",
-    "start": "webpack --mode=development -w",
+    "start": "webpack --mode=production -w",
     "dev": "webpack serve --open",
     "server": "node server/index.js -w"
   },
@@ -21,6 +21,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "ryscott-st": "^1.0.2",
+    "styles": "file:client/src/styles",
     "util": "file:client/src/util"
   },
   "devDependencies": {
@@ -29,6 +30,7 @@
     "@babel/preset-react": "^7.18.6",
     "axios": "^1.2.2",
     "babel-loader": "^9.1.0",
+    "compression-webpack-plugin": "^10.0.0",
     "css-loader": "^6.7.2",
     "date-fns": "^2.29.3",
     "dotenv-webpack": "^8.0.1",

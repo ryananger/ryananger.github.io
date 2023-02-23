@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 
-import '../styles/art.css';
 import st from 'ryscott-st';
+
+import SmoothImage from './SmoothImage.jsx';
 
 const Art = function() {
   const [zoom, setZoom] = useState(null);
@@ -12,16 +13,15 @@ const Art = function() {
     var folder = section + '/';
 
     imageNames[section].map(function(name, i) {
-      var source = 'https://ryananger.github.io/public/images/thumbs/' + folder + name + '.jpg';
+      var source = 'https://ryananger.github.io/public/images/thumbs/' + folder + name + '.webp';
 
       images.push(
         <div key={i} className='imageContainer v'>
-          <img
-            className='imageThumb hidden'
+          <SmoothImage
+            className='imageThumb'
             src={source}
             onClick={()=>{setZoom({section: section, index: i})}}
-            onLoad={(e)=>{e.target.className = 'imageThumb visible'}}
-            loading='lazy'
+            transition='height 0.5s, top 0.5s'
           />
         </div>
       )
@@ -31,15 +31,11 @@ const Art = function() {
   };
 
   var zoomModal = function() {
+    var source = `https://ryananger.github.io/public/images/${zoom.section}/${imageNames[zoom.section][zoom.index]}.webp`;
+
     return (
       <div className='zoomModal v'>
-        <img
-          className='zoomImage hidden'
-          src={`https://ryananger.github.io/public/images/${zoom.section}/${imageNames[zoom.section][zoom.index]}.png`}
-          onClick={()=>{setZoom(null)}}
-          onLoad={(e)=>{e.target.className = 'zoomImage visible'}}
-          loading='lazy'
-        />
+        <SmoothImage className='zoomImage' src={source} onClick={()=>{setZoom(null)}}/>
       </div>
     )
   };
@@ -55,7 +51,7 @@ const Art = function() {
         </div>
       </div>
       <div className='artSection v'>
-        <h3 className='artLabel'>TATTOO</h3>
+        <h3 className='artLabel'>DESIGN</h3>
         <div className='imageViewer h'>
           {renderImages('tattoo')}
         </div>

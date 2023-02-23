@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from 'react';
 
-import '../styles/web.css';
 import st from 'ryscott-st';
 
 const Web = function() {
-  const [project, setProject] = useState('toast');
+  const [project, setProject] = useState(null);
   const [mod, setMod] = useState('hidden');
 
   const projects = {
@@ -12,6 +11,7 @@ const Web = function() {
       <iframe
         className={'webView ' + mod}
         src='https://ryananger.github.io/toast'
+        title='TOAST'
         onLoad={()=>{setMod('visible')}}
       />
     ),
@@ -20,9 +20,9 @@ const Web = function() {
         className={'jupiterFallsView ' + mod}
         src="https://www.youtube.com/embed/XjiPB2ffzPI"
         title="Jupiter Falls"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
+        allowFullScreen
         onLoad={()=>{setMod('visible')}}
       />
     ),
@@ -31,9 +31,9 @@ const Web = function() {
         className={'webView ' + mod}
         src="https://www.youtube.com/embed/dQ_3OX2dcwE"
         title="artBoard"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
+        allowFullScreen
         onLoad={()=>{setMod('visible')}}
       />
     ),
@@ -42,9 +42,9 @@ const Web = function() {
         className={'webView ' + mod}
         src="https://www.youtube.com/embed/GGUM1D9eFb8"
         title="artBoard"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
+        allowFullScreen
         onLoad={()=>{setMod('visible')}}
       />
     )
@@ -59,8 +59,12 @@ const Web = function() {
     return project === str ? ' active' : '';
   };
 
+  useEffect(()=>{
+    setProject('toast');
+  }, []);
+
   return (
-    <div className='webViewer v'>
+    <div className='webViewer full v'>
       <div className='webButtons h'>
         <div className='h' style={{alignItems: 'baseline'}}>
           <h3 className={'navButton' + checkView('toast')} onClick={()=>{handleClick('toast')}}>TOAST</h3>

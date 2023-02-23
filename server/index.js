@@ -5,6 +5,13 @@ const app = express();
 
 //const controller = require('./controller.js');
 
+app.get('*.js', function (req, res, next) {
+  req.url = req.url + '.gz';
+  res.set('Content-Encoding', 'gzip');
+  console.log(req.url);
+  next();
+});
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));

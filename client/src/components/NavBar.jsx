@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 
-import '../styles/nav.css';
 import st from 'ryscott-st';
 
 import ContactButtons from './ContactButtons.jsx';
+import SmoothImage from './SmoothImage.jsx';
 
 const NavBar = function() {
   const view    = st.view;
@@ -15,7 +15,7 @@ const NavBar = function() {
 
   return (
     <div className='nav v' style={{alignItems: 'center'}}>
-      <img className='logo hidden' src={'https://ryananger.github.io/public/rycreates.png'} onLoad={(e)=>{e.target.className = 'logo visible'}}/>
+      <SmoothImage className='logo' src={st.logoSrc}/>
       <h2 className={'navButton' + checkView('web')} onClick={()=>{setView('web')}}>web</h2>
       <h2 className={'navButton' + checkView('art')} onClick={()=>{setView('art')}}>art</h2><br/><br/>
       <div style={{textAlign: 'center', width: '200px', fontSize: '1.8vh'}}>
