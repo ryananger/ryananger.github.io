@@ -6,6 +6,7 @@
 
 .webView {
   width: 100%;
+  min-width: 1000px;
   aspect-ratio: 16/9 auto;
 
   border: 2px solid;

@@ -50,6 +50,15 @@ const Web = function() {
     )
   };
 
+  var button = function(name, value, info) {
+    return (
+      <div className='h' style={{alignItems: 'baseline'}}>
+        <h3 className={'navButton' + checkView(name)} onClick={()=>{handleClick(name)}}>{value}</h3>
+        <small>{info}</small>
+      </div>
+    )
+  };
+
   var handleClick = function(name) {
     setMod('hidden');
     setProject(name);
@@ -66,22 +75,10 @@ const Web = function() {
   return (
     <div className='webViewer full v'>
       <div className='webButtons h'>
-        <div className='h' style={{alignItems: 'baseline'}}>
-          <h3 className={'navButton' + checkView('toast')} onClick={()=>{handleClick('toast')}}>TOAST</h3>
-          <small>restaurant.front-end</small>
-        </div>
-        <div className='h' style={{alignItems: 'baseline'}}>
-          <h3 className={'navButton' + checkView('jupiterFalls')} onClick={()=>{handleClick('jupiterFalls')}}>Jupiter Falls</h3>
-          <small>mobile game</small>
-        </div>
-        <div className='h' style={{alignItems: 'baseline'}}>
-          <h3 className={'navButton' + checkView('artBoard')} onClick={()=>{handleClick('artBoard')}}>artBoard</h3>
-          <small>uxui.database.authentication</small>
-        </div>
-        <div className='h' style={{alignItems: 'baseline'}}>
-          <h3 className={'navButton' + checkView('foodDRIVEN')} onClick={()=>{handleClick('foodDRIVEN')}}>foodDRIVEN</h3>
-          <small>uxui.database interface</small>
-        </div>
+        {button('toast', 'TOAST', 'restaurant.front-end')}
+        {button('jupiterFalls', 'Jupiter Falls', 'mobile game')}
+        {button('artBoard', 'artBoard', 'uxui.database.authentication')}
+        {button('foodDRIVEN', 'foodDRIVEN', 'uxui.databse interface')}
       </div>
       {projects[project]}
     </div>
