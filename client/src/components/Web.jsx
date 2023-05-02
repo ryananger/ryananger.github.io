@@ -6,13 +6,17 @@ const Web = function() {
   const [project, setProject] = useState(null);
   const [mod, setMod] = useState('hidden');
 
+  const load = function() {
+    setTimeout(()=>{setMod('visible')}, 500);
+  };
+
   const projects = {
     toast: (
       <iframe
         className={'webView ' + mod}
         src='https://ryananger.github.io/toast'
         title='TOAST'
-        onLoad={()=>{setMod('visible')}}
+        onLoad={load}
       />
     ),
     jupiterFalls: (
@@ -23,7 +27,7 @@ const Web = function() {
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
-        onLoad={()=>{setMod('visible')}}
+        onLoad={load}
       />
     ),
     artBoard: (
@@ -34,7 +38,7 @@ const Web = function() {
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
-        onLoad={()=>{setMod('visible')}}
+        onLoad={load}
       />
     ),
     foodDRIVEN: (
@@ -45,7 +49,7 @@ const Web = function() {
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
-        onLoad={()=>{setMod('visible')}}
+        onLoad={load}
       />
     )
   };
@@ -60,6 +64,10 @@ const Web = function() {
   };
 
   var handleClick = function(name) {
+    if (project === name) {
+      return;
+    }
+
     setMod('hidden');
     setProject(name);
   };
