@@ -56,6 +56,7 @@ html, body, #root, .app {
   width: 100%;
   height: calc(100vh - 4vh);
   overflow: auto;
+  transition: opacity 1s;
 }
 
 .projects {
@@ -103,7 +104,7 @@ html, body, #root, .app {
   justify-content: space-between;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 999px) {
   .projects {
     justify-content: space-between !important;
   }
@@ -114,6 +115,7 @@ html, body, #root, .app {
 
   .projectImage {
     width: 80%;
+    max-width: 480px;
   }
 }
 
