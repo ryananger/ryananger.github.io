@@ -21,21 +21,20 @@
 }
 
 .contactButtons {
-  width: 80%;
+  width: 100%;
   justify-content: center;
 }
 
 .contactButton {
   margin-left: 0.5vh;
   margin-right: 0.5vh;
-  color: #ff9f79;
 
   transition: color 0.5s;
 }
 
-.navButton:hover, .contactButton:hover {
+.contactButton:hover {
   cursor: pointer;
-  color: #f5e0d4;
+  color: var(--darkSalmon);
 
   transition: color 0.1s;
 }
