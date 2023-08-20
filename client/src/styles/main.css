@@ -1,0 +1,105 @@
+.mainTile {
+  background-color: var(--coffee);
+  color: var(--lightText);
+  transition: height 1s;
+}
+
+.closed {
+  height: 2svh;
+}
+
+.open {
+  height: 80svh;
+}
+
+.main {
+  margin: 2vh;
+  width: 100%;
+  height: calc(100% - 4vh);
+  transition: opacity 1s;
+}
+
+.projects {
+  width: 100%;
+  height: 100%;
+  overflow: overlay;
+  overflow-y: hidden;
+  justify-content: space-evenly !important;
+  align-items: center !important;
+}
+
+.projects::-webkit-scrollbar {
+  height: 8px;
+}
+
+.projectCard {
+  padding: 12px;
+  width: 100%;
+  height: 400px;
+  margin: 10px;
+  border-radius: 32px;
+  max-width: 20%;
+  overflow: hidden;
+  flex: none;
+  background-color: transparent;
+  transition: background-color 0.5s, color 0.2s;
+}
+
+@media (min-width: 1000px) {
+  .projectCard:hover {
+    cursor: pointer;
+    background-color: var(--leaf);
+    color: var(--darkText);
+  }
+}
+
+.projectImage {
+  width: 100%;
+  border: 2px solid black;
+  box-sizing: border-box;
+  border-radius: 24px;
+  margin-bottom: 12px;
+}
+
+.projectInfo {
+  height: 100%;
+  text-align: center;
+  justify-content: flex-start;
+}
+
+@media only screen and (max-width: 540px) {
+  .main {
+    height: unset;
+  }
+
+  .open {
+    height: 1800px;
+  }
+
+  .projects {
+    flex-direction: column;
+    overflow: unset;
+    overflow-y: unset;
+  }
+
+  .projectCard {
+    max-width: unset;
+  }
+
+  .projectImage {
+    width: 80%;
+    max-width: 360px;
+  }
+}
+
+@media only screen and (max-width: 999px) and (min-width: 541px) {
+  .projects {
+    justify-content: space-between !important;
+  }
+
+  .projectCard {
+    margin: 10%;
+    max-width: 80%;
+    height: unset;
+  }
+}

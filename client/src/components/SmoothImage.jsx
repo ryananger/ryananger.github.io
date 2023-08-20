@@ -1,18 +1,18 @@
 import React, {useEffect, useState} from 'react';
 
-const SmoothImage = function({className, src, index, onClick, transition}) {
+const SmoothImage = function({className, src, index, onClick}) {
   const [mod, setMod] = useState('hidden');
 
   const styles = {
     visible: {
       visibility: 'visible',
       opacity: '1',
-      transition: transition + ', opacity 0.25s'
+      transition: 'opacity 0.25s'
     },
     hidden: {
       visibility: 'hidden',
       opacity: '0',
-      transition: transition + ', visibility 0s 1s, opacity 1s linear'
+      transition: 'visibility 0s 1s, opacity 1s linear'
     }
   };
 

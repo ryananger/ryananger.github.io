@@ -12,6 +12,7 @@ import Header from './tiles/Header.jsx';
 import Help from './tiles/Help.jsx';
 import Below from './Below.jsx';
 import Main from './tiles/Main.jsx';
+import MainTile from './MainTile.jsx';
 
 const App = function() {
   const [view, setView] = st.newState('view', useState('web'));
@@ -37,7 +38,7 @@ const App = function() {
       />
       <Tile bg={'salmon'} height={35} open={1} center={<Help/>}/>
       <Below />
-      <Tile bg={'coffee'} color={'lightText'} height={80} open={1} center={<Main />}/>
+      <MainTile center={<Main />}/>
       <Tile bg={'gold'} height={10} center={<ContactButtons />}/>
     </div>
   );

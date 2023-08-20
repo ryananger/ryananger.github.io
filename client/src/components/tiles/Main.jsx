@@ -39,10 +39,9 @@ const Main = function() {
           <SmoothImage className='projectImage' src={`public/images/${entry.src}.png`}/>
           <div className='projectInfo v'>
             <h2 style={{margin: '12px'}}>{entry.src}</h2>
-            <br/>
-            {entry.description}
-            <br/><br/>
 
+            {entry.description}
+            <br/>
           </div>
         </div>
       )
