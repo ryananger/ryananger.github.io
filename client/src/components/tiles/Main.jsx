@@ -9,6 +9,11 @@ const Main = function() {
 
   const projects = [
     {
+      src: 'toast',
+      link: 'https://ryananger.github.io/toast',
+      description: 'a sleek and modern restaurant presentation with menu and reservations'
+    },
+    {
       src: 'jupiterFalls',
       link: 'https://jf.earthpunk.art',
       description: 'an educational math game built for web and mobile platforms, includes chickens and robots'
@@ -17,11 +22,6 @@ const Main = function() {
       src: 'inkgen',
       link: 'https://gen.inkvessels.art',
       description: 'an app that generates a random mandala based on an input image, great for artists'
-    },
-    {
-      src: 'toast',
-      link: 'https://ryscott.xyz/toast',
-      description: 'a sleek and modern restaurant presentation with menu and reservations'
     },
     {
       src: 'thinkFood',
